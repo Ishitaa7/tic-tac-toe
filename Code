@@ -53,7 +53,6 @@ def tictactoe():
     print("Player two symbol is: O")
     
     # if logicFun(A,B,C) == False:                                  #logicFun gets executed here everytime, even if it is True
-    #     print("Hey I am at if")
     while logicFun(A,B,C) == False:                                 #logicFun gets executed here everytime, even if it is True
         print("Player one make your move")
         rowName1 = input("P1 enter row name: ")
@@ -79,12 +78,7 @@ def tictactoe():
         elif rowName2 == "C":
             C[columnNumber2] = "O"
         printMat(A ,B ,C)
-    # else:
-        # print("Hey, I am at else")
-        # logicFun(A ,B ,C)    
-    # if logicFun(A,B,C) == True:
-    #     pass
-
+    
             
 tictactoe()
 
