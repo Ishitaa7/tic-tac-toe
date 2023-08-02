@@ -1,0 +1,93 @@
+def printMat(A = [], B = [], C = []):
+    print(A)
+    print(B)
+    print(C)
+
+def logicFun(A = [], B = [], C = []):
+    for i in range (0,3):
+        if A[i] == B[i] and B[i] == C[i] and A[i] == "X":
+            print ("Player one wins")
+            return(True)
+        elif A[i] == B[i] and B[i] == C[i] and A[i] == "O":
+            print ("Player two wins")
+            return(True)
+    if A[0] == A[1] and A[1] == A[2] and A[1]== "X":
+        print ("Player one wins")
+        return(True)
+    elif B[0] == B[1] and B[1 ]== B[2] and B[1]== "X":
+        print ("Player one wins")
+        return(True)
+    elif C[0] == C[1] and C[1] == C[2] and C[1] == "X":
+        print ("Player one wins")
+        return(True)
+    elif A[0] == A[1] and A[1] == A[2] and A[1] == "O":
+        print ("Player two wins")
+        return(True)
+    elif B[0] == B[1] and B[1 ]== B[2] and B[1] == "O":
+        print ("Player two wins")
+        return(True)
+    elif C[0] == C[1] and C[1] == C[2] and C[1] == "O":
+        print ("Player two wins")
+        return(True)
+    elif A[0] == B[1] and B[1 ]== C[2] and C[2] == "X":
+        print ("Player one wins")
+        return(True)
+    elif A[0] == B[1] and B[1] == C[2] and C[2] == "O":
+        print ("Player two wins")
+        return(True)
+    elif A[2] == B[1] and B[1] == C[0] and C[0] == "X":
+        print ("Player one wins")
+        return(True)
+    elif A[2] == B[1] and B[1] == C[0] and C[0] == "O":
+        print ("Player two wins")
+        return(True)
+    return(False)
+        
+    
+def tictactoe():
+    A = [" ", " ", " "]
+    B = [" ", " ", " "]
+    C = [" ", " ", " "]
+    printMat(A ,B ,C)
+    print("Player one symbol is: X")
+    print("Player two symbol is: O")
+    
+    # if logicFun(A,B,C) == False:                                  #logicFun gets executed here everytime, even if it is True
+    #     print("Hey I am at if")
+    while logicFun(A,B,C) == False:                                 #logicFun gets executed here everytime, even if it is True
+        print("Player one make your move")
+        rowName1 = input("P1 enter row name: ")
+        columnNumber1 = int(input("P1 enter column number: "))
+        if rowName1 == "A":
+            A[columnNumber1] = "X"
+        elif rowName1 == "B":
+            B[columnNumber1] = "X"
+        elif rowName1 == "C":
+            C[columnNumber1] = "X"
+        printMat(A ,B ,C)
+        if logicFun(A,B,C) == True:
+            break
+
+
+        print("Player two make your move")
+        rowName2 = input("P2 enter row name: ")
+        columnNumber2 = int(input("P2 enter column number: "))
+        if rowName2 == "A":
+            A[columnNumber2] = "O"
+        elif rowName2 == "B":
+            B[columnNumber2] = "O"
+        elif rowName2 == "C":
+            C[columnNumber2] = "O"
+        printMat(A ,B ,C)
+    # else:
+        # print("Hey, I am at else")
+        # logicFun(A ,B ,C)    
+    # if logicFun(A,B,C) == True:
+    #     pass
+
+            
+tictactoe()
+
+
+ 
+        
